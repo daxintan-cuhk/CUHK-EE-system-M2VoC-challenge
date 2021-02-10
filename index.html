@@ -21,5 +21,38 @@
 <h3>
   This paper presents the CUHK-EE voice cloning system for ICASSP 2021 M2VoC challenge. The challenge provides two Mandarin speech corpora: the AIShell-3 corpus of 218 speakers with noise and reverberation and the MST corpus including high-quality speech of one male and one female speakers. 100 and 5 utterances of 3 target speakers in different voice and style are provided in track 1 and 2 respectively, and the participants are required to synthesize speech in target speaker's voice and style. We take part in the track 1 and carry out voice cloning based on 100 utterances of target speakers. An end-to-end voicing cloning system is developed to accomplish the task, which includes: 1. a text and speech front-end module with the help of forced alignment, 2. an acoustic model combining Tacotron2 and DurIAN to predict melspectrogram, 3. a Hifigan vocoder for waveform generation. Our system comprises three stages: multi-speaker training stage, target speaker adaption stage and target speaker synthesis stage. Our team is identified as T17. The subjective evaluation results provided by the challenge organizer demonstrate the effectiveness of our system.
 </h3>
+<p>
+    groundtruth audios of 3 speakers in different voice and style
+    <table border='1'>
+    <tr>
+    <td>
+        groundtruth audio of speaker S3 in chat style
+    </td>
+     <td>
+        groundtruth audio of speaker S4 in game style
+    </td>
+    <td>
+        groundtruth audio of speaker S5 in story style
+    </td>
+    <tr>
+    </td>
+        <audio controls='controls'>
+              <source src='audios/groundtruth/TST-Track1-S3-female-Chat-100/000001.wav' type='audio/wav'>
+        </audio>
+    </td>
+    </td>
+        <audio controls='controls'>
+              <source src='audios/groundtruth/TST-Track1-S4-male-Game-100/000001.wav' type='audio/wav'>
+        </audio>
+    </td>
+    </td>
+        <audio controls='controls'>
+              <source src='audios/groundtruth/TST-Track1-S5-male-Story-100/000001.wav' type='audio/wav'>
+        </audio>
+    </td>
+    </table>
+</p>
+
+    
 </body>
 </html>
