@@ -1,407 +1,295 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Speech examples of CUHK EE voice cloning system for ICASSＰ 2021 Ｍ2VoC challenge</title>
+    <title>Title</title>
 </head>
 <body>
-<h1>
-    <center>Speech examples of of CUHK EE voice cloning system for ICASSP 2021 M2VoC challenge
-</h1>
+<h1 align='center'>Speech examples of speech audio edit for Chinese and English dataset</h1>
 <h2>
-    ICASSP 2021 M2VoC challenge: <a href="http://challenge.ai.iqiyi.com/detail?raceId=5fb2688224954e0b48431fe0">website</a>
+    We select VCTK and MST dataset to be English and Chinese dataset for demo respectively. For each dataset, we 
+    provide 15 samples for each edit option, including insertion, replacement and deletion. For the insertion and 
+    replacement, we provide the original audio, the edited audio from baseline systems and our proposed system, to
+    not only demonstrates the edit effect but also allow the listeners to compare the edit performance of different systems.
+    For the deletion, we only provide the original audio and the edited audio from our proposed system, as difference 
+    between different system is not noticeable.
 </h2>
+<hr>
 <h2>
-    System description paper: <a href="https://arxiv.org/abs/2103.04699">paper</a>   
+<font color='red'>1. English VCTK dataset:</font><br>
 </h2>
-<h2>
-    Author: Daxin Tan, Hingpang Huang, Guangyan Zhang, Tan Lee
-</h2>
+<hr>
 <h3>
-  Abstract:This paper presents the CUHK-EE voice cloning system for ICASSP 2021 M2VoC challenge. The challenge provides two Mandarin speech corpora: the AIShell-3 corpus of 218 speakers with noise and reverberation and the MST corpus including high-quality speech of one male and one female speakers. 100 and 5 utterances of 3 target speakers in different voice and style are provided in track 1 and 2 respectively, and the participants are required to synthesize speech in target speaker's voice and style. We take part in the track 1 and carry out voice cloning based on 100 utterances of target speakers. An end-to-end voicing cloning system is developed to accomplish the task, which includes: 1. a text and speech front-end module with the help of forced alignment, 2. an acoustic model combining Tacotron2 and DurIAN to predict melspectrogram, 3. a Hifigan vocoder for waveform generation. Our system comprises three stages: multi-speaker training stage, target speaker adaption stage and target speaker synthesis stage. Our team is identified as T17. The subjective evaluation results provided by the challenge organizer demonstrate the effectiveness of our system.
+<font color='red'>1.1 Insertion:</font><br>
+Each sample has<font color='red'> 6 audios</font>, of which one is the original audio from human, and
+the other 5 are synthesized audios. The synthesized audio are based on the <font
+color='red'>modified text where some words are inserted into the text of the original audio</font>.
 </h3>
 
 <hr>
-<strong><center>1. groundtruth audios of 3 speakers in different voice and style</strong>
-<table border='1' align="center">
+<strong>Sample:1</strong>
+<table border='1'>
 <tr>
-    <td align="center">
-        groundtruth audio of speaker S3 in chat style
+    <td colspan='6'>
+        original_text: <strong>For that reason cover should not be given.
+</strong><br>
     </td>
-    <td align="center">
-        groundtruth audio of speaker S4 in game style
-    </td>
-    <td align="center">
-        groundtruth audio of speaker S5 in story style
-    </td>
+</tr>
 <tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S3-female-Chat-100/000080.wav' type='audio/wav'>
-        </audio>
+    <td colspan='6'>
+        original word list: <strong>for that reason cover should not be given
+</strong><br>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S4-male-Game-100/000078.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S5-male-Story-100/000013.wav' type='audio/wav'>
-        </audio>
-    </td>
+</tr>
 <tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S3-female-Chat-100/000059.wav' type='audio/wav'>
-        </audio>
+    <td colspan='6'>
+        final word list: <strong>for that theoretical and realistic reason cover should not be given
+</strong><br>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S4-male-Game-100/000005.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S5-male-Story-100/000060.wav' type='audio/wav'>
-        </audio>
-    </td>
+</tr>
 <tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S3-female-Chat-100/000015.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>original_audio</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/English_VCTK/overall_insert_text_comparison/p243/313/audio_groundtruth.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S4-male-Game-100/000090.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 1</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/English_VCTK/overall_insert_text_comparison/p243/313/baseline_1_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S5-male-Story-100/000048.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 2</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/English_VCTK/overall_insert_text_comparison/p243/313/baseline_2_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-<tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S3-female-Chat-100/000001.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 3</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/English_VCTK/overall_insert_text_comparison/p243/313/baseline_3_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S4-male-Game-100/000093.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 4</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/English_VCTK/overall_insert_text_comparison/p243/313/proposed_system_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S5-male-Story-100/000032.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>proposed system</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/English_VCTK/overall_insert_text_comparison/p243/313/proposed_system_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-<tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S3-female-Chat-100/000012.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S4-male-Game-100/000011.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/normalized_groundtruth/TST-Track1-S5-male-Story-100/000003.wav' type='audio/wav'>
-        </audio>
-    </td>
+</tr>
 </table>
+<hr>
+<h3>
+<font color='red'>1.2 Replacement:</font><br>
+Each sample has<font color='red'> 6 audios</font>, of which one is the original audio from human, and
+the other 5 are synthesized audios. The synthesized audio are based on the <font
+color='red'>modified text where some words in the text of original audio are replaced by other words</font>.
+</h3>
 
 <hr>
-<strong><center>2. synthesized audio of 3 speakers with text in corresponding style set</strong>
-<table border='1' align="center">
+<strong>Sample:1</strong>
+<table border='1'>
 <tr>
-    <td align="center">
-        synthesized audio of speaker S3 in chat style
+    <td colspan='6'>
+        original_text: <strong>For that reason cover should not be given.
+</strong><br>
     </td>
-    <td align="center">
-        synthesized audio of speaker S4 in game style
-    </td>
-    <td align="center">
-        synthesized audio of speaker S5 in story style
-    </td>
+</tr>
 <tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_style/xxx_Track1_a_S3_TT_chat_0004.wav' type='audio/wav'>
-        </audio>
+    <td colspan='6'>
+        original word list: <strong>for that reason cover should not be given
+</strong><br>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_style/xxx_Track1_a_S4_TT_game_0096.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_style/xxx_Track1_a_S5_TT_story_0069.wav' type='audio/wav'>
-        </audio>
-    </td>
+</tr>
 <tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_style/xxx_Track1_a_S3_TT_chat_0003.wav' type='audio/wav'>
-        </audio>
+    <td colspan='6'>
+        final word list: <strong>for that reason cover is impossible to be given
+</strong><br>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_style/xxx_Track1_a_S4_TT_game_0038.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_style/xxx_Track1_a_S5_TT_story_0052.wav' type='audio/wav'>
-        </audio>
-    </td>
+</tr>
 <tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_style/xxx_Track1_a_S3_TT_chat_0070.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>original_audio</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/English_VCTK/overall_modify_text_comparison/p243/313/audio_groundtruth.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_style/xxx_Track1_a_S4_TT_game_0094.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 1</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/English_VCTK/overall_modify_text_comparison/p243/313/baseline_1_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_style/xxx_Track1_a_S5_TT_story_0015.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 2</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/English_VCTK/overall_modify_text_comparison/p243/313/baseline_2_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-<tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_style/xxx_Track1_a_S3_TT_chat_0086.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 3</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/English_VCTK/overall_modify_text_comparison/p243/313/baseline_3_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_style/xxx_Track1_a_S4_TT_game_0020.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 4</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/English_VCTK/overall_modify_text_comparison/p243/313/proposed_system_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_style/xxx_Track1_a_S5_TT_story_0002.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>proposed system</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/English_VCTK/overall_modify_text_comparison/p243/313/proposed_system_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-<tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_style/xxx_Track1_a_S3_TT_chat_0083.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_style/xxx_Track1_a_S4_TT_game_0012.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_style/xxx_Track1_a_S5_TT_story_0097.wav' type='audio/wav'>
-        </audio>
-    </td>
+</tr>
 </table>
+<hr>
+<hr>
+<h3>
+<font color='red'>2.1 Insertion:</font><br>
+Each sample has<font color='red'> 6 audios</font>, of which one is the original audio from human, and
+the other 5 are synthesized audios. The synthesized audio are based on the <font
+color='red'>modified text where some words are inserted into the text of the original audio</font>.
+</h3>
 
 <hr>
-<strong><center>3. synthesized audio of 3 speakers with text in common text</strong>
-<table border='1' align="center">
+<strong>Sample:1</strong>
+<table border='1'>
 <tr>
-    <td align="center">
-        synthesized audio of speaker S3
+    <td colspan='6'>
+        original_text: <strong>最后，一些粗浅观察吧，就多说几点吧。一，越南确实在勃兴。
+</strong><br>
     </td>
-    <td align="center">
-        synthesized audio of speaker S4
-    </td>
-    <td align="center">
-        synthesized audio of speaker S5
-    </td>
+</tr>
 <tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_common/xxx_Track1_a_S3_TT_common_0080.wav' type='audio/wav'>
-        </audio>
+    <td colspan='6'>
+        original word list: <strong>zui4 hou4 yi1 xie1 cu1 qian3 guan1 cha2 ba5 jiu4 duo1 shuo1 ji3 dian3 ba5 yi1 yue4 nan2 que4 shi2 zai4 bo2 xing1
+</strong><br>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_common/xxx_Track1_a_S4_TT_common_0029.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_common/xxx_Track1_a_S5_TT_common_0033.wav' type='audio/wav'>
-        </audio>
-    </td>
+</tr>
 <tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_common/xxx_Track1_a_S3_TT_common_0067.wav' type='audio/wav'>
-        </audio>
+    <td colspan='6'>
+        final word list: <strong>zui4 hou4 yi1 xie1 我自己的 cu1 qian3 guan1 cha2 ba5 jiu4 duo1 shuo1 ji3 dian3 ba5 yi1 yue4 nan2 que4 shi2 zai4 bo2 xing1
+</strong><br>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_common/xxx_Track1_a_S4_TT_common_0009.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_common/xxx_Track1_a_S5_TT_common_0022.wav' type='audio/wav'>
-        </audio>
-    </td>
+</tr>
 <tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_common/xxx_Track1_a_S3_TT_common_0009.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>original_audio</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/Chinese_MST/overall_insert_text_comparison/MST_S1/000223/audio_groundtruth.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_common/xxx_Track1_a_S4_TT_common_0059.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 1</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/Chinese_MST/overall_insert_text_comparison/MST_S1/000223/baseline_1_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_common/xxx_Track1_a_S5_TT_common_0006.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 2</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/Chinese_MST/overall_insert_text_comparison/MST_S1/000223/baseline_2_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-<tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_common/xxx_Track1_a_S3_TT_common_0052.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 3</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/Chinese_MST/overall_insert_text_comparison/MST_S1/000223/baseline_3_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_common/xxx_Track1_a_S4_TT_common_0069.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 4</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/Chinese_MST/overall_insert_text_comparison/MST_S1/000223/proposed_system_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_common/xxx_Track1_a_S5_TT_common_0034.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>proposed system</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/Chinese_MST/overall_insert_text_comparison/MST_S1/000223/proposed_system_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-<tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_common/xxx_Track1_a_S3_TT_common_0087.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_common/xxx_Track1_a_S4_TT_common_0012.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_common/xxx_Track1_a_S5_TT_common_0019.wav' type='audio/wav'>
-        </audio>
-    </td>
+</tr>
 </table>
+<hr>
+<h3>
+<font color='red'>2.2 Replacement:</font><br>
+Each sample has<font color='red'> 6 audios</font>, of which one is the original audio from human, and
+the other 5 are synthesized audios. The synthesized audio are based on the <font
+color='red'>modified text where some words in the text of original audio are replaced by other words</font>.
+</h3>
 
 <hr>
-<strong><center>4. synthesized audio of 3 speakers with text in intelligibility set</strong>
-<table border='1' align="center">
+<strong>Sample:1</strong>
+<table border='1'>
 <tr>
-    <td align="center">
-        synthesized audio of speaker S3
+    <td colspan='6'>
+        original_text: <strong>最后，一些粗浅观察吧，就多说几点吧。一，越南确实在勃兴。
+</strong><br>
     </td>
-    <td align="center">
-        synthesized audio of speaker S4
-    </td>
-    <td align="center">
-        synthesized audio of speaker S5
-    </td>
-
+</tr>
 <tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_intelligibility/xxx_Track1_a_S3_TT_intelligibility_0009.wav' type='audio/wav'>
-        </audio>
+    <td colspan='6'>
+        original word list: <strong>zui4 hou4 yi1 xie1 cu1 qian3 guan1 cha2 ba5 jiu4 duo1 shuo1 ji3 dian3 ba5 yi1 yue4 nan2 que4 shi2 zai4 bo2 xing1
+</strong><br>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_intelligibility/xxx_Track1_a_S4_TT_intelligibility_0024.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_intelligibility/xxx_Track1_a_S5_TT_intelligibility_0037.wav' type='audio/wav'>
-        </audio>
-    </td>
+</tr>
 <tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_intelligibility/xxx_Track1_a_S3_TT_intelligibility_0095.wav' type='audio/wav'>
-        </audio>
+    <td colspan='6'>
+        final word list: <strong>zui4 hou4 yi1 xie1 个人看法 ba5 jiu4 duo1 shuo1 ji3 dian3 ba5 yi1 yue4 nan2 que4 shi2 zai4 bo2 xing1
+</strong><br>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_intelligibility/xxx_Track1_a_S4_TT_intelligibility_0059.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_intelligibility/xxx_Track1_a_S5_TT_intelligibility_0071.wav' type='audio/wav'>
-        </audio>
-    </td>
+</tr>
 <tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_intelligibility/xxx_Track1_a_S3_TT_intelligibility_0066.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>original_audio</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/Chinese_MST/overall_modify_text_comparison/MST_S1/000223/audio_groundtruth.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_intelligibility/xxx_Track1_a_S4_TT_intelligibility_0069.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 1</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/Chinese_MST/overall_modify_text_comparison/MST_S1/000223/baseline_1_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_intelligibility/xxx_Track1_a_S5_TT_intelligibility_0003.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 2</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/Chinese_MST/overall_modify_text_comparison/MST_S1/000223/baseline_2_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-<tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_intelligibility/xxx_Track1_a_S3_TT_intelligibility_0073.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 3</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/Chinese_MST/overall_modify_text_comparison/MST_S1/000223/baseline_3_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_intelligibility/xxx_Track1_a_S4_TT_intelligibility_0053.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>baseline system 4</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/Chinese_MST/overall_modify_text_comparison/MST_S1/000223/proposed_system_normal_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_intelligibility/xxx_Track1_a_S5_TT_intelligibility_0035.wav' type='audio/wav'>
-        </audio>
+    <td>
+    <h3 align='center'><strong>proposed system</strong></h3>
+    <audio controls='controls' style='width: 240px;'>
+        <source src='samples/Chinese_MST/overall_modify_text_comparison/MST_S1/000223/proposed_system_audio_outputs_hifigan_UNIVERSAL_V1.wav' type='audio/wav'>
+    </audio>
     </td>
-<tr>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S3_intelligibility/xxx_Track1_a_S3_TT_intelligibility_0024.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S4_intelligibility/xxx_Track1_a_S4_TT_intelligibility_0083.wav' type='audio/wav'>
-        </audio>
-    </td>
-    <td align="center">
-        <audio controls='controls'>
-              <source src='audios/synthesized/T1_S5_intelligibility/xxx_Track1_a_S5_TT_intelligibility_0010.wav' type='audio/wav'>
-        </audio>
-    </td>
+</tr>
 </table>
-    
 </body>
 </html>
